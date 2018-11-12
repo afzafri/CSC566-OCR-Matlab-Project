@@ -18,3 +18,15 @@ Inputimage =~im2bw(Inputimage,threshold);
 %% Remove all object containing fewer than 30 pixels
 Inputimage = bwareaopen(Inputimage,30);
 pause(1);
+
+%% Label connected components
+[L Ne]=bwlabel(Inputimage);
+
+propied=regionprops(L,'BoundingBox');
+imshow(~Inputimage);
+hold on
+for n=1:size(propied,1)
+  rectangle('Position',propied(n).BoundingBox,'EdgeColor','g','LineWidth',2)
+end
+hold off
+pause (1);
