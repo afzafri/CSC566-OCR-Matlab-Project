@@ -95,7 +95,9 @@ function extractBtn_Callback(hObject, eventdata, handles)
 global filePath;
 filePath = get(handles.filePath, 'string');
 % call main process script
-main;
+if filePath ~= ""
+    main;  
+end
 
 
 function filePath_Callback(hObject, eventdata, handles)
