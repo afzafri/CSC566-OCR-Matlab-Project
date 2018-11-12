@@ -1,5 +1,7 @@
+global filePath;
+
 %% Read Image
-Inputimage=imread('example.jpg');
+Inputimage=imread(filePath);
 
 %% Show image
 figure(1)
