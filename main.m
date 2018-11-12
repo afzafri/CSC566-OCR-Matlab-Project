@@ -34,7 +34,7 @@ hold off
 pause (1);
 
 %% Objects extraction
-figure
+figure('Name', 'Extracted Texts'); 
 for n=1:Ne
   [r,c] = find(L==n);
   n1=Inputimage(min(r):max(r),min(c):max(c));
