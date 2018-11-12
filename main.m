@@ -30,3 +30,12 @@ for n=1:size(propied,1)
 end
 hold off
 pause (1);
+
+%% Objects extraction
+figure
+for n=1:Ne
+  [r,c] = find(L==n);
+  n1=Inputimage(min(r):max(r),min(c):max(c));
+  imshow(~n1);
+  pause(0.5)
+end
