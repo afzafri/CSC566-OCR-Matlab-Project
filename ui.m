@@ -86,6 +86,7 @@ else
    set(handles.filePath, 'string', selectedfile);
 end
 
+
 % --- Executes on button press in extractBtn.
 function extractBtn_Callback(hObject, eventdata, handles)
 % hObject    handle to extractBtn (see GCBO)
@@ -93,8 +94,8 @@ function extractBtn_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 global filePath;
 filePath = get(handles.filePath, 'string');
+% call main process script
 main;
-
 
 
 function filePath_Callback(hObject, eventdata, handles)
@@ -124,3 +125,4 @@ function resetBtn_Callback(hObject, eventdata, handles)
 % hObject    handle to resetBtn (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+set(handles.filePath, 'string', "");
