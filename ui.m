@@ -97,6 +97,8 @@ filePath = get(handles.filePath, 'string');
 % call main process script
 if filePath ~= ""
     main;  
+else
+    err = msgbox('Please choose an image first!','Error');
 end
 
 
