@@ -44,6 +44,6 @@ end
 
 %% Extract object from image into plain text using Matlab OCR function
 result = ocr(~Inputimage, 'TextLayout', 'Block');
-disp(result.Text);
 
-success = msgbox('Image selected successfully processed.','Success');
+%% Show alert result
+success = msgbox({'Image selected successfully processed.'; strcat('Result: ',result.Text)},'Success');
