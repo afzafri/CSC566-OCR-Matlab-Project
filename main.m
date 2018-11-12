@@ -10,3 +10,7 @@ title('ORIGINAL IMAGE')
 if size(Inputimage,3)==3 % RGB image
  Inputimage=rgb2gray(Inputimage);
 end
+
+%% Convert to binary image
+threshold = graythresh(Inputimage);
+Inputimage =~im2bw(Inputimage,threshold);
