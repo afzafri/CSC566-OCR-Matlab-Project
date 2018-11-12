@@ -1,5 +1,7 @@
+global filePath;
+
 %% Read Image
-Inputimage=imread('example.jpg');
+Inputimage=imread(filePath);
 
 %% Show image
 figure(1)
@@ -32,12 +34,15 @@ hold off
 pause (1);
 
 %% Objects extraction
-figure
 for n=1:Ne
   [r,c] = find(L==n);
   n1=Inputimage(min(r):max(r),min(c):max(c));
-  imshow(~n1);
+  figureimshow(~n1);
   pause(0.5)
 end
 
-%% Extract object from image into plain text using Mat
+%% Extract object from image into plain text using Matlab OCR function
+result = ocr(~Inputimage, 'TextLayout', 'Block');
+
+%% Show alert result
+success = msgbox({'Image selected successfully processed.'; strcat('Result: ',result.Text)},'Success');

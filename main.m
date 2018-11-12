@@ -38,6 +38,7 @@ figure
 for n=1:Ne
   [r,c] = find(L==n);
   n1=Inputimage(min(r):max(r),min(c):max(c));
+  subplot(2,Ne/2,n);
   imshow(~n1);
   pause(0.5)
 end
