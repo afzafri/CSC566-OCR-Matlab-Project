@@ -14,3 +14,7 @@ end
 %% Convert to binary image
 threshold = graythresh(Inputimage);
 Inputimage =~im2bw(Inputimage,threshold);
+
+%% Remove all object containing fewer than 30 pixels
+Inputimage = bwareaopen(Inputimage,30);
+pause(1);
